@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/lucia/AndroidStudioProjects/SeekingBabysitter/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/SeekingBabysitter/app/src/main/res/layout/apply_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/SeekingBabysitter/app/src/main/res/layout/fragment_apply.xml" value="0.17239583333333333" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/SeekingBabysitter/app/src/main/res/layout/fragment_list.xml" value="0.17239583333333333" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/SeekingBabysitter/app/src/main/res/layout/home_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/SeekingBabysitter/app/src/main/res/layout/list_fragment.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

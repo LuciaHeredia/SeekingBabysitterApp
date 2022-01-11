@@ -1,7 +1,8 @@
-package com.example.seekingbabysitter
+package com.example.seekingbabysitter.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.seekingbabysitter.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
