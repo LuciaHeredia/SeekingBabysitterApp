@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">SeekingBabysitter</string>
-    <string name="seeking_babysitter">SeekingBabysitter</string>
+    <string name="seeking_babysitter">Seeking Babysitter</string>
+    <string name="apply">Apply</string>
+    <string name="search">SEARCH</string>
+    <string name="person_image">person image</string>
+    <string name="full_name">full name</string>
+    <string name="age">age</string>
+    <string name="user_id">user id</string>
+    <string name="city">city</string>
+    <string name="person_card_transition">card_transition_name</string>
+    <string name="confirmed_babysitters">Confirmed Babysitters:</string>
+
 </resources>
