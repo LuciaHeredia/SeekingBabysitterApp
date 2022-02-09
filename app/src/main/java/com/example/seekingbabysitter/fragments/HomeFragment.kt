@@ -30,6 +30,10 @@ class HomeFragment : Fragment(){
             findNavController().navigate(R.id.action_homeFragment_to_listFragment)
         }
 
+        binding.loginBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+        }
+
         return view
     }
 

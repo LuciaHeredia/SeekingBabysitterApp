@@ -26,5 +26,6 @@
     <string name="not_loaded">Not Loaded</string>
     <string name="password">Password:</string>
     <string name="city_ask">City:</string>
+    <string name="enter">ENTER</string>
 
 </resources>

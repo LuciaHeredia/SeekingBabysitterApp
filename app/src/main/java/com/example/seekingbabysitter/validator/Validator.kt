@@ -44,6 +44,7 @@ class Validator {
         private const val EMAIL_VALIDATION_MSG = "Enter a valid email address"
         private const val PHONE_VALIDATION_MSG = "Enter a valid phone number"
         private const val AGE_VALIDATION_MSG = "Age should be minimum 18"
+        private const val SECTION_VALIDATION_MSG = "Must fill"
 
         /**
          * Retrieve string data from the parameter.
@@ -58,6 +59,30 @@ class Validator {
                 str = data
             }
             return str
+        }
+
+        /**
+         * Checks if section isn't empty
+         * @param data - can be EditText or String
+         * @param updateUI - if true and if data is EditText, the function sets error to the EditText or its TextInputLayout
+         * @return - true if the name is valid.
+         */
+        fun isValidSection(data: Any, updateUI: Boolean = true): Boolean {
+            val str = getText(data)
+            var valid = true
+
+            // Section should not de empty
+            if (str.isEmpty()) {
+                valid = false
+            }
+
+            // Set error if required
+            if (updateUI) {
+                val error: String? = if (valid) null else SECTION_VALIDATION_MSG
+                setError(data, error)
+            }
+
+            return valid
         }
 
         /**
