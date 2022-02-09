@@ -9,7 +9,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.seekingbabysitter.databinding.FragmentDetailsBinding
 import com.example.seekingbabysitter.model.Person
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialFadeThrough
 
 class DetailsFragment : Fragment() {
 
@@ -18,6 +18,12 @@ class DetailsFragment : Fragment() {
 
     private val args: DetailsFragmentArgs by navArgs()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        enterTransition = MaterialFadeThrough() // MaterialDesign Transition
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,8 +31,6 @@ class DetailsFragment : Fragment() {
 
         _binding = FragmentDetailsBinding.inflate(inflater, container, false)
         val view = binding.root
-
-        sharedElementEnterTransition = MaterialContainerTransform()
 
         val displayCharacter = args.babysitter // get data from HomeFragment
 

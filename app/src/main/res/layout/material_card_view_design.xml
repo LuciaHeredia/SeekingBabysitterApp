@@ -9,7 +9,6 @@
     android:layout_margin="10dp"
     android:clickable="true"
     android:backgroundTint="@color/teal_700"
-    android:transitionName="@{@string/person_card_transition(jsonString)}"
     app:cardElevation="6dp"
     tools:ignore="TouchTargetSizeCheck">
 

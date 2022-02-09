@@ -5,19 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.seekingbabysitter.R
 import com.example.seekingbabysitter.adapter.DataAdapter
 import com.example.seekingbabysitter.data.DataSource
 import com.example.seekingbabysitter.databinding.FragmentListBinding
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.google.android.material.card.MaterialCardView
+import com.google.android.material.transition.MaterialFadeThrough
 
 class ListFragment : Fragment() {
     private var _binding: FragmentListBinding? = null
     private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        exitTransition = MaterialFadeThrough() // MaterialDesign Transition
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,12 +42,9 @@ class ListFragment : Fragment() {
                 val mapper = jacksonObjectMapper()
                 val jsonString = mapper.writeValueAsString(myDataset[position])
 
-                //MaterialDesign Transition + SafeArgs + Navigation
-                val cardView = view.findViewById<MaterialCardView>(R.id.details_view)
-                val transitionName = getString(R.string.person_card_transition)
-                val extras = FragmentNavigatorExtras(cardView to transitionName)
+                //SafeArgs + Navigation
                 val directions = ListFragmentDirections.actionListFragmentToDetailsFragment(jsonString)
-                findNavController().navigate(directions,extras)
+                findNavController().navigate(directions)
 
             }
         })
