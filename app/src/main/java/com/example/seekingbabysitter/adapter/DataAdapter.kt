@@ -27,12 +27,12 @@ class DataAdapter(
         val imageView: ImageView = view.findViewById(R.id.person_image)
         val nameTextView: TextView = view.findViewById(R.id.full_name)
         val ageTextView: TextView = view.findViewById(R.id.age)
-        val userIdTextView: TextView = view.findViewById(R.id.user_id)
         val cityTextView: TextView = view.findViewById(R.id.city)
+        val userIdTextView: TextView = view.findViewById(R.id.user_id)
 
         init{
             itemView.setOnClickListener{
-           //     listener.onItemClick(absoluteAdapterPosition)
+                listener.onItemClick(absoluteAdapterPosition)
             }
         }
 
@@ -47,11 +47,11 @@ class DataAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
-        holder.imageView.setImageResource(item.user_image)
-        holder.nameTextView.text = ("Full Name: " + item.first_name + " " + item.last_name)
-        holder.ageTextView.text = ("Age: " + item.age.toString())
-        holder.userIdTextView.text = ("User Id: " + item.user_id)
-        holder.cityTextView.text = ("City: " + item.city)
+            holder.imageView.setImageResource(item.user_image)
+            holder.nameTextView.text = ("Full Name: " + item.first_name + " " + item.last_name)
+            holder.ageTextView.text = ("Age: " + item.age.toString())
+            holder.cityTextView.text = ("City: " + item.city)
+            holder.userIdTextView.text = ("User Id: " + item.user_id)
     }
 
     override fun getItemCount(): Int {

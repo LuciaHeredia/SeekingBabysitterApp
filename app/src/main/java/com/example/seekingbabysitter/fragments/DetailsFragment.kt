@@ -38,6 +38,10 @@ class DetailsFragment : Fragment() {
         binding.imageDetails.setImageResource(person.user_image)
         binding.fullNameDetails.text = ("Full Name: " + person.first_name + " " + person.last_name)
         binding.ageDetails.text = ("Age: " + person.age.toString())
+        binding.phoneDetails.text = ("Phone: " + person.phone)
+        binding.cityDetails.text = ("City: " + person.city)
+        binding.emailDetails.text = ("Email: " + person.email)
+        binding.userIdDetails.text = ("User Id: " + person.user_id)
 
         return view
     }

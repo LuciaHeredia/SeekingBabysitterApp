@@ -27,7 +27,7 @@ class ListFragment : Fragment() {
         _binding = FragmentListBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        val myDataset = DataSource().loadCharacters()
+        val myDataset = DataSource().loadFilteredList()
         binding.recyclerview.layoutManager = LinearLayoutManager(activity) // vertical layout Manager
         val adapter = DataAdapter(myDataset)
         binding.recyclerview.adapter = adapter // Setting Adapter with recyclerview

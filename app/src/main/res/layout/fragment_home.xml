@@ -23,6 +23,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/user_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Test Test, looged in"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name"
+        app:layout_constraintVertical_bias="0.0" />
+
     <LinearLayout
         android:id="@+id/buttons"
         android:layout_width="wrap_content"
@@ -32,14 +47,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_name"
-        app:layout_constraintVertical_bias="0.237">
+        app:layout_constraintVertical_bias="0.191">
 
         <Button
             android:id="@+id/apply_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/apply"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -49,15 +64,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
             android:text="@string/search"
             android:textSize="25sp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:text="@string/log_in"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/logged_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="More"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="280dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

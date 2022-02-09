@@ -1,21 +1,367 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="@drawable/gradiant_background"
+    android:id="@+id/applyLayout"
     tools:context=".fragments.ApplyFragment">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Apply Fragment"
-        android:textColor="@color/black"
-        android:textSize="40sp"
+        android:text="@string/apply_as_a_babysitter"
+        android:textColor="@color/purple"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:textSize="50sp"
         android:textStyle="bold" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/first_name"
+            android:textColor="@color/purple"
+            android:layout_gravity="center_vertical"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextPersonName"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/last_name"
+            android:textColor="@color/purple"
+            android:layout_gravity="center_vertical"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextPersonLastName"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/age_ask"
+            android:textColor="@color/purple"
+            android:layout_gravity="center_vertical"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextAge"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:ems="5"
+            android:textColor="@color/black"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/phone_ask"
+            android:textColor="@color/purple"
+            android:layout_gravity="center_vertical"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            android:textColor="@color/black"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/city_ask"
+            android:textColor="@color/purple"
+            android:layout_gravity="center_vertical"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextCity"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:ems="5"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/black"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/email_ask"
+            android:textColor="@color/purple"
+            android:layout_gravity="center_vertical"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/user_id_random"
+            android:textColor="@color/purple"
+            android:layout_gravity="center_vertical"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/set_user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:background="@color/light_grey"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/password"
+            android:textColor="@color/purple"
+            android:layout_gravity="center_vertical"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="Load Profile picture:"
+            android:textColor="@color/purple"
+            android:layout_gravity="center_vertical"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pro_pic_loaded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="Not Loaded"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical"
+            android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/pro_text_approve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="@string/waiting_for_approval"
+                android:textColor="@color/design_default_color_error"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="Load ID picture: "
+                android:textColor="@color/purple"
+                android:layout_gravity="center_vertical"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id_pic_loaded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="@string/not_loaded"
+                android:textColor="@color/white"
+                android:layout_gravity="center_vertical"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/id_text_approve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="@string/waiting_for_approval"
+                android:textColor="@color/design_default_color_error"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_apply"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:textSize="23sp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/send" />
+
 </LinearLayout>
+
+</ScrollView>

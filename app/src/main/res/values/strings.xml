@@ -10,5 +10,21 @@
     <string name="city">city</string>
     <string name="person_card_transition">card_transition_name</string>
     <string name="confirmed_babysitters">Confirmed Babysitters:</string>
+    <string name="phone">phone</string>
+    <string name="facebook">facebook</string>
+    <string name="apply_as_a_babysitter">Apply as a Babysitter:</string>
+    <string name="first_name">First Name:</string>
+    <string name="last_name">Last Name:</string>
+    <string name="age_ask">Age:</string>
+    <string name="user_id_random">User ID:</string>
+    <string name="phone_ask">Phone:</string>
+    <string name="facebook_ask">Facebook:</string>
+    <string name="send">Send</string>
+    <string name="log_in">Log In</string>
+    <string name="email_ask">Email:</string>
+    <string name="waiting_for_approval">Waiting for approval</string>
+    <string name="not_loaded">Not Loaded</string>
+    <string name="password">Password:</string>
+    <string name="city_ask">City:</string>
 
 </resources>

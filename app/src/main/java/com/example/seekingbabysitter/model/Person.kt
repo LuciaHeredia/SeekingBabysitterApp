@@ -8,8 +8,11 @@ data class Person(
     val age: Int,
     val phone: String,
     val city: String,
-    val facebook: String,
+    val email: String,
     val user_id: String,
+    val password: String,
+    val reviewed: Boolean,
+    val approved: Boolean,
     @DrawableRes val user_image: Int,
     @DrawableRes val id_image: Int
 )
