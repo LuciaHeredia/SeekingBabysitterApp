@@ -47,7 +47,7 @@ class DataAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
-            holder.imageView.setImageResource(item.user_image)
+            //holder.imageView.setImageResource(item.user_image)
             holder.nameTextView.text = ("Full Name: " + item.first_name + " " + item.last_name)
             holder.ageTextView.text = ("Age: " + item.age.toString())
             holder.cityTextView.text = ("City: " + item.city)

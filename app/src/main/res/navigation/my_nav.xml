@@ -26,6 +26,13 @@
     </fragment>
 
     <fragment
+        android:id="@+id/reviewListFragment"
+        android:name="com.example.seekingbabysitter.fragments.ReviewListFragment"
+        android:label="fragment_review_list"
+        tools:layout="@layout/fragment_review_list" >
+    </fragment>
+
+    <fragment
         android:id="@+id/detailsFragment"
         android:name="com.example.seekingbabysitter.fragments.DetailsFragment"
         android:label="fragment_details"
@@ -36,13 +43,52 @@
     </fragment>
 
     <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.seekingbabysitter.fragments.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="babysitter"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.seekingbabysitter.fragments.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.seekingbabysitter.fragments.LogInFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_loginFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.seekingbabysitter.fragments.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" >
+        <argument
+            android:name="babysitter_logged"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_userFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_reviewListFragment"
+            app:destination="@id/reviewListFragment" />
     </fragment>
 
     <fragment

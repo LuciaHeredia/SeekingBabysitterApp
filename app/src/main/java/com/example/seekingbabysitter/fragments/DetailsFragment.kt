@@ -39,7 +39,7 @@ class DetailsFragment : Fragment() {
         val person: Person = mapper.readValue(displayCharacter, Person::class.java)
 
         // insert in fragment objects
-        binding.imageDetails.setImageResource(person.user_image)
+        //binding.imageDetails.setImageResource(person.user_image)
         binding.fullNameDetails.text = ("Full Name: " + person.first_name + " " + person.last_name)
         binding.ageDetails.text = ("Age: " + person.age.toString())
         binding.phoneDetails.text = ("Phone: " + person.phone)

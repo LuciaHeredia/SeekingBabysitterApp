@@ -27,5 +27,9 @@
     <string name="password">Password:</string>
     <string name="city_ask">City:</string>
     <string name="enter">ENTER</string>
+    <string name="update_data">Update data:</string>
+    <string name="save">SAVE</string>
+    <string name="users_to_approve">Users To Approve:</string>
+    <string name="approve">APPROVE</string>
 
 </resources>

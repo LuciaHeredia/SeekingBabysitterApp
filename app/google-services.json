@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "39242478414",
+    "firebase_url": "https://seekingbabysitterapp-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "seekingbabysitterapp",
+    "storage_bucket": "seekingbabysitterapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39242478414:android:5dbccbb326fd3d138e241f",
+        "android_client_info": {
+          "package_name": "com.example.seekingbabysitter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39242478414-93rsv0uractgv7kl7udh2i47evcdf0qh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXoc-ubq1mYsET0IKMtxVSeSGAXuLn23Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39242478414-93rsv0uractgv7kl7udh2i47evcdf0qh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
