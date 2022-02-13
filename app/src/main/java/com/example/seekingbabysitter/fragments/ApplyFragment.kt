@@ -44,7 +44,7 @@ class ApplyFragment : Fragment() {
                 val person = Person(
                     binding.editTextPersonName.text.toString().trim { it <= ' ' },
                     binding.editTextPersonLastName.text.toString().trim { it <= ' ' },
-                    binding.editTextPersonLastName.text.toString().toLong(),
+                    binding.editTextAge.text.toString().toLong(),
                     binding.editTextPhone.text.toString().trim { it <= ' ' },
                     binding.editTextCity.text.toString().trim { it <= ' ' },
                     binding.editTextEmail.text.toString().trim { it <= ' ' },

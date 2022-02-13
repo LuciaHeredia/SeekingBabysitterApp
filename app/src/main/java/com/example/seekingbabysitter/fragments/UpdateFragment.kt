@@ -23,6 +23,17 @@ class UpdateFragment : Fragment() {
         val view = binding.root
 
         binding.buttonSave.setOnClickListener {
+
+            /*
+            //convert Person model to jsonString
+            val mapper = jacksonObjectMapper()
+            val jsonString = mapper.writeValueAsString(person)
+
+            //SafeArgs + Navigation
+            val directions = LogInFragmentDirections.actionLoginFragmentToUserFragment(jsonString)
+            findNavController().navigate(directions)
+            */
+
             findNavController().navigate(R.id.action_updateFragment_to_userFragment)
         }
 

@@ -1,5 +1,6 @@
 package com.example.seekingbabysitter.fragments
 
+import android.graphics.Paint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -31,8 +32,11 @@ class LogInFragment  : Fragment() {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        // logout
-        FirebaseAuth.getInstance().signOut()
+        binding.forgotPasswordText.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+        // FORGOT PASSWORD
+        binding.forgotPasswordText.setOnClickListener{
+            findNavController().navigate(R.id.action_loginFragment_to_ForgotPassFragment)
+        }
 
         loginValidation(view)
 
@@ -103,6 +107,4 @@ class LogInFragment  : Fragment() {
             }
         }
     }
-
-
 }

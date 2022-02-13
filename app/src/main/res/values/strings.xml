@@ -31,5 +31,7 @@
     <string name="save">SAVE</string>
     <string name="users_to_approve">Users To Approve:</string>
     <string name="approve">APPROVE</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="reset_explain">Enter your email address and we will send you an email to reset your password.</string>
 
 </resources>

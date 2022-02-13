@@ -43,7 +43,7 @@ class ReviewListFragment : Fragment() {
                 val jsonString = mapper.writeValueAsString(myDataset[position])
 
                 //SafeArgs + Navigation
-                val directions = ListFragmentDirections.actionListFragmentToDetailsFragment(jsonString)
+                val directions = ReviewListFragmentDirections.actionReviewListFragmentToReviewDetailsFragment(jsonString)
                 findNavController().navigate(directions)
 
             }

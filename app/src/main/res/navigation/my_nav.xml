@@ -30,6 +30,9 @@
         android:name="com.example.seekingbabysitter.fragments.ReviewListFragment"
         android:label="fragment_review_list"
         tools:layout="@layout/fragment_review_list" >
+        <action
+            android:id="@+id/action_reviewListFragment_to_ReviewDetailsFragment"
+            app:destination="@id/ReviewDetailsFragment" />
     </fragment>
 
     <fragment
@@ -43,12 +46,12 @@
     </fragment>
 
     <fragment
-        android:id="@+id/detailsFragment"
-        android:name="com.example.seekingbabysitter.fragments.DetailsFragment"
-        android:label="fragment_details"
-        tools:layout="@layout/fragment_details" >
+        android:id="@+id/ReviewDetailsFragment"
+        android:name="com.example.seekingbabysitter.fragments.ReviewDetailsFragment"
+        android:label="fragment_review_details"
+        tools:layout="@layout/fragment_review_details" >
         <argument
-            android:name="babysitter"
+            android:name="babysitter_review"
             app:argType="string"/>
     </fragment>
 
@@ -70,6 +73,19 @@
         <action
             android:id="@+id/action_loginFragment_to_userFragment"
             app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_ForgotPassFragment"
+            app:destination="@id/ForgotPassFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ForgotPassFragment"
+        android:name="com.example.seekingbabysitter.fragments.ForgotPassFragment"
+        android:label="fragment_forgot_pass"
+        tools:layout="@layout/fragment_forgot_pass" >
+        <action
+            android:id="@+id/action_ForgotPassFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
@@ -89,6 +105,9 @@
         <action
             android:id="@+id/action_userFragment_to_reviewListFragment"
             app:destination="@id/reviewListFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
     <fragment
