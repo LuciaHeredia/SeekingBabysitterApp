@@ -1,6 +1,7 @@
 package com.example.seekingbabysitter.fragments
 
 import android.app.Activity.RESULT_OK
+import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -134,8 +135,11 @@ class ApplyFragment : Fragment() {
 
     private fun signUp(view: ScrollView) {
 
-        // TODOO: loading popup
-        // ???
+        // Loading Alert-Dialog
+        val dialogBuilder = AlertDialog.Builder(activity!!)
+        dialogBuilder.setMessage("Uploading...")
+        val alert = dialogBuilder.create()
+        alert.show()
 
         /** Firebase Storage: START **/
         val formatter = SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.getDefault())
@@ -186,31 +190,76 @@ class ApplyFragment : Fragment() {
                             user!!.sendEmailVerification()
 
                             /** SUCCESS **/
-                            Snackbar.make(view,"Registration was successful! Verify your Email!",Snackbar.LENGTH_LONG).show()
+                            alert.dismiss() // stop showing loading-alert-dialog
+                            Snackbar.make(view,"Registration was successful! We sent you a verification email!",Snackbar.LENGTH_LONG).show()
                             Log.i("APPLY:", "Registration was successful!")
                             findNavController().navigate(R.id.action_applyFragment_to_homeFragment) // back Home
 
                         } else {
-                            Snackbar.make(view,"Registration Failed!",Snackbar.LENGTH_LONG).show()
+                            alert.dismiss() // stop showing loading-alert-dialog
+                            Snackbar.make(view,"Registration Failed! Check Email section!",Snackbar.LENGTH_LONG).show()
                             Log.i("APPLY Firebase auth:", "Failed")
+
+                            // Delete from Firebase Storage the Profile Image that was saved
+                            storageReferencePro.delete().addOnSuccessListener {
+                                Log.i("APPLY Firebase Storage: Profile image deleted:", "Succeed")
+                            }.addOnFailureListener{
+                                Log.i("APPLY Firebase Storage: Profile image deleted:", "Failed")
+                            }
+
+                            // Delete from Firebase Storage the Id Image that was saved
+                            storageReferenceId.delete().addOnSuccessListener {
+                                Log.i("APPLY Firebase Storage: Id image deleted:", "Succeed")
+                            }.addOnFailureListener{
+                                Log.i("APPLY Firebase Storage: Id image deleted:", "Failed")
+                            }
+
+                            // Delete from Firebase REALTIME the user id that was saved
+                            database.child(person.user_id.toString()).removeValue()
+
                         }
                     }
                     /** Firebase Auth: END **/
 
                 }.addOnFailureListener {
-                    Snackbar.make(view,"Registration Failed!",Snackbar.LENGTH_LONG).show()
+                    alert.dismiss() // stop showing loading-alert-dialog
+                    Snackbar.make(view,"Registration Failed! Check your information!",Snackbar.LENGTH_LONG).show()
                     Log.i("APPLY Firebase REALTIME:", "Failed")
+
+                    // Delete from Firebase Storage the Profile Image that was saved
+                    storageReferencePro.delete().addOnSuccessListener {
+                        Log.i("APPLY Firebase Storage: Profile image deleted:", "Succeed")
+                    }.addOnFailureListener{
+                        Log.i("APPLY Firebase Storage: Profile image deleted:", "Failed")
+                    }
+
+                    // Delete from Firebase Storage the Id Image that was saved
+                    storageReferenceId.delete().addOnSuccessListener {
+                        Log.i("APPLY Firebase Storage: Id image deleted:", "Succeed")
+                    }.addOnFailureListener{
+                        Log.i("APPLY Firebase Storage: Id image deleted:", "Failed")
+                    }
+
                 }
                 /** Firebase RealTime: END **/
 
 
             }.addOnFailureListener{
-                Snackbar.make(view,"Registration Failed!",Snackbar.LENGTH_LONG).show()
+                alert.dismiss() // stop showing loading-alert-dialog
+                Snackbar.make(view,"Registration Failed! Check Id Image!",Snackbar.LENGTH_LONG).show()
                 Log.i("APPLY Firebase Storage: Id image upload:", "Failed")
+
+                // Delete from Firebase Storage the Profile Image that was saved
+                storageReferencePro.delete().addOnSuccessListener {
+                    Log.i("APPLY Firebase Storage: Profile image deleted:", "Succeed")
+                }.addOnFailureListener{
+                    Log.i("APPLY Firebase Storage: Profile image deleted:", "Failed")
+                }
             }
 
         }.addOnFailureListener{
-            Snackbar.make(view,"Registration Failed!",Snackbar.LENGTH_LONG).show()
+            alert.dismiss() // stop showing loading-alert-dialog
+            Snackbar.make(view,"Registration Failed! Check Profile Image!",Snackbar.LENGTH_LONG).show()
             Log.i("APPLY Firebase Storage: Profile image upload:", "Failed")
         }
         /** Firebase Storage: END **/
