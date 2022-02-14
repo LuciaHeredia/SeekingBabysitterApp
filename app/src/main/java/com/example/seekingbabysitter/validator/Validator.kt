@@ -42,7 +42,7 @@ class Validator {
 
         private const val NAME_VALIDATION_MSG = "Enter a valid name"
         private const val EMAIL_VALIDATION_MSG = "Enter a valid email address"
-        private const val PHONE_VALIDATION_MSG = "Enter a valid phone number"
+        private const val PHONE_VALIDATION_MSG = "Phone number should be 10 numbers long"
         private const val AGE_VALIDATION_MSG = "Age should be minimum 18"
         private const val SECTION_VALIDATION_MSG = "Must fill"
 
@@ -135,7 +135,7 @@ class Validator {
 
             // Set error if required
             if (updateUI) {
-                val error: String? = if (valid) null else PHONE_VALIDATION_MSG
+                val error: String? = if (valid && str.trim().length == 10) null else PHONE_VALIDATION_MSG
                 setError(data, error)
             }
 
