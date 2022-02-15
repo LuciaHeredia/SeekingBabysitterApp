@@ -23,6 +23,13 @@
     <string name="log_in">Log In</string>
     <string name="email_ask">Email:</string>
     <string name="waiting_for_approval">Waiting for approval</string>
+    <string name="waiting_for_review">Waiting for review</string>
+    <string name="change_image">Change image</string>
+    <string name="image_approved">Image approved</string>
+    <string name="User_Data_Approved">User Data Approved!</string>
+    <string name="check_info_user">Check your information!</string>
+    <string name="check_images">Check your images!</string>
+    <string name="check_images_info">Check your information and images!</string>
     <string name="not_loaded">Not Loaded</string>
     <string name="password">Password:</string>
     <string name="city_ask">City:</string>

@@ -52,7 +52,7 @@ class DataAdapter(
         val item = dataset[position]
 
         // retrieve and insert profile image of user from Firebase Storage
-        val storageRef = FirebaseStorage.getInstance().reference.child("images/${item.user_image}")
+        val storageRef = FirebaseStorage.getInstance().reference.child("images/${item.profile_image}")
         val localFile = File.createTempFile("tempProfileImage","jpeg")
         storageRef.getFile(localFile).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)

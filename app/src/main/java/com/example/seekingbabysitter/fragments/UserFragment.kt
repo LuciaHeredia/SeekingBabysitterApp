@@ -51,8 +51,20 @@ class UserFragment : Fragment() {
         }
 
         binding.loggedBtnUser.setOnClickListener {
-            if (btnName == "UPDATE PROFILE")
-                findNavController().navigate(R.id.action_userFragment_to_updateFragment)
+            if (btnName == "UPDATE PROFILE"){
+
+                //convert Person model to jsonString
+                val mapperUpdate = jacksonObjectMapper()
+                val jsonString = mapperUpdate.writeValueAsString(person)
+
+                /** SUCCESS **/
+                //SafeArgs + Navigation
+                val directionsUpdate = UserFragmentDirections.actionUserFragmentToUpdateFragment(jsonString)
+                findNavController().navigate(directionsUpdate)
+            }
+            else if(btnName == "MANAGER"){
+                findNavController().navigate(R.id.action_userFragment_to_reviewListFragment)
+            }
         }
 
         binding.btnLogout.setOnClickListener {
@@ -60,7 +72,6 @@ class UserFragment : Fragment() {
 
             Log.i("User Firebase auth:", "LOG OUT")
             Snackbar.make(view,"LOG OUT Succeed!", Snackbar.LENGTH_LONG).show()
-
             findNavController().navigate(R.id.action_userFragment_to_homeFragment)
         }
 

@@ -1,5 +1,6 @@
 package com.example.seekingbabysitter.fragments
 
+import android.app.AlertDialog
 import android.graphics.Paint
 import android.os.Bundle
 import android.util.Log
@@ -46,10 +47,18 @@ class LogInFragment  : Fragment() {
     private fun loginValidation(view: View) {
         binding.buttonEnter.setOnClickListener {
 
+            // loading Alert-Dialog
+            val dialogBuilder = AlertDialog.Builder(activity!!)
+            dialogBuilder.setMessage("Loading...")
+            val alert = dialogBuilder.create()
+            alert.show()
+
             if (Validator.isValidSection(binding.editTextUserIdLogin, true) &&
                 Validator.isValidSection(binding.editTextPasswordLogin, true)) {
                     val userId: String = binding.editTextUserIdLogin.text.toString().trim { it <= ' ' }
                     val password: String = binding.editTextPasswordLogin.text.toString().trim { it <= ' ' }
+
+                    /** Firebase RealTime: START **/
                     // get email from Firebase Realtime
                     database = FirebaseDatabase.getInstance().reference
                     database.child(userId).get().addOnSuccessListener {
@@ -64,11 +73,13 @@ class LogInFragment  : Fragment() {
                                 it.child("user_id").value.toString(),
                                 it.child("reviewed").value as Boolean?,
                                 it.child("approved").value as Boolean?,
-                                it.child("user_image").value.toString(),
-                                it.child("id_image").value.toString()
+                                it.child("profile_image").value.toString(),
+                                it.child("id_image").value.toString(),
+                                it.child("profile_approved").value as Boolean?,
+                                it.child("id_approved").value as Boolean?
                             )
 
-                            // log-in using FirebaseAuth
+                            /** Firebase Auth: START **/
                             FirebaseAuth.getInstance().signInWithEmailAndPassword(person.email.toString(), password).addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
                                     val user = FirebaseAuth.getInstance().currentUser
@@ -81,29 +92,38 @@ class LogInFragment  : Fragment() {
                                         val mapper = jacksonObjectMapper()
                                         val jsonString = mapper.writeValueAsString(person)
 
+                                        /** SUCCESS **/
                                         //SafeArgs + Navigation
+                                        alert.dismiss() // stop showing loading-alert-dialog
                                         val directions = LogInFragmentDirections.actionLoginFragmentToUserFragment(jsonString)
                                         findNavController().navigate(directions)
                                     }
                                     else {
+                                        alert.dismiss() // stop showing loading-alert-dialog
                                         Snackbar.make(view,"Verify your Email first!", Snackbar.LENGTH_LONG).show()
                                     }
 
                                 }
                                 else {
+                                    alert.dismiss() // stop showing loading-alert-dialog
                                     Snackbar.make(view,"LOGIN Failed!", Snackbar.LENGTH_LONG).show()
                                     Log.i("APPLY Firebase auth:", "Failed")
                                 }
                             }
+                            /** Firebase Auth: END **/
 
                         }else {
+                            alert.dismiss() // stop showing loading-alert-dialog
                             Snackbar.make(view,"User doesn't exit!",Snackbar.LENGTH_LONG).show()
                             Log.i("LOGIN:", "User doesn't exit!")
                         }
+
                     }.addOnFailureListener {
+                        alert.dismiss() // stop showing loading-alert-dialog
                         Snackbar.make(view,"LOGIN Failed!",Snackbar.LENGTH_LONG).show()
                         Log.i("LOGIN:", "Failed!")
                     }
+                /** Firebase RealTime: END **/
             }
         }
     }

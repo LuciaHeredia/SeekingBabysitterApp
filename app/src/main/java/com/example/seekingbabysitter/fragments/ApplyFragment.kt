@@ -66,7 +66,7 @@ class ApplyFragment : Fragment() {
             if(validApply && validProfileImage && validIdImage) {
                 signUp(view)
             }else{
-                Snackbar.make(view,"Check Images!",Snackbar.LENGTH_LONG).show()
+                Snackbar.make(view,R.string.check_images_info,Snackbar.LENGTH_LONG).show()
             }
         }
 
@@ -169,8 +169,10 @@ class ApplyFragment : Fragment() {
                     binding.setUserId.text.toString().trim { it <= ' ' },
                     reviewed = false,
                     approved = false,
-                    user_image = fileNamePro,
-                    id_image = fileNameId
+                    profile_image = fileNamePro,
+                    id_image = fileNameId,
+                    profile_approved = false,
+                    id_approved = false
                 )
 
                 /** Firebase RealTime: START **/
