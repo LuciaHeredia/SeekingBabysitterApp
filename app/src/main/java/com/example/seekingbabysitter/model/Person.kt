@@ -8,10 +8,10 @@ data class Person(
     val city: String? = null,
     val email: String? = null,
     val user_id: String? = null,
-    val reviewed: Boolean? = false,
-    val approved: Boolean? = false,
+    var reviewed: Boolean? = false,
+    var approved: Boolean? = false,
     val profile_image: String? = null,
     val id_image: String? = null,
-    val profile_approved: Boolean? = false,
-    val id_approved: Boolean? = false
+    var profile_approved: Boolean? = false,
+    var id_approved: Boolean? = false
 )

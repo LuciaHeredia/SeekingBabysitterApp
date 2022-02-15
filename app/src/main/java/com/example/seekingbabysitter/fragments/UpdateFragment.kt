@@ -39,10 +39,6 @@ class UpdateFragment : Fragment() {
     private var validProfileImage: Boolean = false
     private var validIdImage: Boolean = false
 
-    private var validInfoUpdate: Boolean = false
-    private var validProfileImageUpdate: Boolean = false
-    private var validIdImageUpdate: Boolean = false
-
     private var profileImageChanged: Boolean = false
     private var idImageChanged: Boolean = false
 
@@ -275,6 +271,10 @@ class UpdateFragment : Fragment() {
                 )
 
                 /** Firebase RealTime: START **/
+                // change settings
+                newPerson.approved = false
+                newPerson.reviewed = false
+
                 // Save User's data
                 database = Firebase.database.reference
                 database.child(newPerson.user_id.toString()).setValue(newPerson).addOnSuccessListener {
@@ -322,6 +322,9 @@ class UpdateFragment : Fragment() {
         storageReferencePro.putFile(imageProUri).addOnSuccessListener {
             binding.proPicImageUpdate.setImageURI(null)
 
+            // change settings
+            person.profile_approved = false
+
             /*** new id_image uploaded ***/
             // id image upload
             val nowId = Date()
@@ -350,6 +353,10 @@ class UpdateFragment : Fragment() {
                 )
 
                 /** Firebase RealTime: START **/
+                // change settings
+                newPerson.approved = false
+                newPerson.reviewed = false
+
                 // Save User's data
                 database = Firebase.database.reference
                 database.child(newPerson.user_id.toString()).setValue(newPerson).addOnSuccessListener {
@@ -400,6 +407,9 @@ class UpdateFragment : Fragment() {
         storageReferenceId.putFile(imageIdUri).addOnSuccessListener {
             binding.idPicImageUpdate.setImageURI(null)
 
+            // change settings
+            person.id_approved = false
+
             // USER to be saved in DB
             val newPerson = Person(
                 binding.editTextPersonNameUpdate.text.toString().trim { it <= ' ' },
@@ -418,6 +428,10 @@ class UpdateFragment : Fragment() {
             )
 
             /** Firebase RealTime: START **/
+            // change settings
+            newPerson.approved = false
+            newPerson.reviewed = false
+
             // Save User's data
             database = Firebase.database.reference
             database.child(newPerson.user_id.toString()).setValue(newPerson).addOnSuccessListener {

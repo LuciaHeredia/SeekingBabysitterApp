@@ -47,5 +47,13 @@
     <string name="load_profile_picture">Load Profile picture:</string>
     <string name="id_pic_of_user">id pic of user</string>
     <string name="loading">Loading...</string>
+    <string name="profile_picture">Profile picture:</string>
+    <string name="change">CHANGE</string>
+    <string name="accept">ACCEPT</string>
+    <string name="id_picture">ID picture:</string>
+    <string name="approve_all">APPROVE ALL</string>
+    <string name="not_approved">NOT APPROVED</string>
+    <string name="approved">APPROVED</string>
+    <string name="in_general">In General:</string>
 
 </resources>

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.seekingbabysitter.adapter.DataAdapter
 import com.example.seekingbabysitter.databinding.FragmentReviewListBinding
@@ -80,7 +81,7 @@ class ReviewListFragment : Fragment() {
     fun loadReviewList(uList: List<Person>): List<Person> {
         val reviewList = ArrayList<Person>()
         for (p in uList) {
-            if (p.approved == false && p.reviewed == false) {
+            if (p.approved == false && p.reviewed == false && p.user_id != "manager") {
                 reviewList.add(p)
             }
         }

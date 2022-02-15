@@ -30,16 +30,15 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:id="@+id/editTextPersonName_review_details"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:ems="10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
                 android:textColor="@color/black"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+                android:background="@color/light_grey"
+                android:textSize="25sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
@@ -59,16 +58,15 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:id="@+id/editTextPersonLastName_review_details"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:ems="10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
                 android:textColor="@color/black"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+                android:background="@color/light_grey"
+                android:textSize="25sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
@@ -88,15 +86,15 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:id="@+id/editTextAge_review_details"
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:ems="5"
+                android:gravity="center_vertical"
                 android:textColor="@color/black"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"
-                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+                android:background="@color/light_grey"
+                android:textSize="25sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
@@ -116,15 +114,15 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:id="@+id/editTextPhone_review_details"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="phone"
+                android:gravity="center_vertical"
                 android:textColor="@color/black"
-                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+                android:background="@color/light_grey"
+                android:textSize="25sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
@@ -144,15 +142,15 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:id="@+id/editTextCity_review_details"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:ems="5"
-                android:importantForAutofill="no"
-                android:inputType="text"
+                android:gravity="center_vertical"
                 android:textColor="@color/black"
-                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+                android:background="@color/light_grey"
+                android:textSize="25sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
@@ -171,26 +169,44 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
-                    android:text="Load Profile picture:"
+                    android:text="@string/profile_picture"
                     android:textColor="@color/purple"
                     android:layout_gravity="center_vertical"
                     android:textSize="25sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/pro_pic_image_review_details"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/profile_pic_of_user"
+                android:scaleType="centerCrop"
+                android:background="@drawable/ic_add_photo"
+                tools:ignore="ImageContrastCheck" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
 
-                <TextView
-                    android:id="@+id/pro_text_approve_review_details"
+                <Button
+                    android:id="@+id/btn_change_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="@string/waiting_for_approval"
-                    android:textColor="@color/design_default_color_error"
-                    android:layout_gravity="center_vertical"
-                    android:textSize="18sp" />
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="20sp"
+                    android:text="@string/change" />
+
+                <Button
+                    android:id="@+id/btn_ok_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:text="@string/accept" />
             </LinearLayout>
 
         </LinearLayout>
@@ -211,39 +227,105 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
-                    android:text="Load ID picture: "
+                    android:text="@string/id_picture"
                     android:textColor="@color/purple"
                     android:layout_gravity="center_vertical"
                     android:textSize="25sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/id_pic_image_review_details"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/id_pic_of_user"
+                android:scaleType="centerCrop"
+                android:background="@drawable/ic_add_photo"
+                tools:ignore="ImageContrastCheck" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
 
-                <TextView
-                    android:id="@+id/id_text_approve_review_details"
+                <Button
+                    android:id="@+id/btn_change_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="@string/waiting_for_approval"
-                    android:textColor="@color/design_default_color_error"
-                    android:layout_gravity="center_vertical"
-                    android:textSize="18sp" />
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="20sp"
+                    android:text="@string/change" />
+
+                <Button
+                    android:id="@+id/btn_ok_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:text="@string/accept" />
             </LinearLayout>
 
         </LinearLayout>
+
+
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/in_general"
+                    android:textColor="@color/purple"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btn_approved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="20dp"
+                android:textSize="18sp"
+                android:text="@string/approved" />
+
+            <Button
+                android:id="@+id/btn_not_approved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="18sp"
+                android:text="@string/not_approved" />
+        </LinearLayout>
+         </LinearLayout>
 
         <Button
-            android:id="@+id/button_approve"
+            android:id="@+id/btn_save_review_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp"
             android:textSize="20sp"
             android:layout_marginBottom="50dp"
-            android:text="@string/approve" />
+            android:text="@string/save" />
 
     </LinearLayout>
 
