@@ -31,7 +31,7 @@ class ReviewListFragment : Fragment() {
         _binding = FragmentReviewListBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        val myDataset = DataSource().loadFilteredList()
+        val myDataset = DataSource().loadReviewList()
         binding.recyclerviewReview.layoutManager = LinearLayoutManager(activity) // vertical layout Manager
         val adapter = DataAdapter(myDataset)
         binding.recyclerviewReview.adapter = adapter // Setting Adapter with recyclerview

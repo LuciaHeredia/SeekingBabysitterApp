@@ -1,5 +1,7 @@
 package com.example.seekingbabysitter.adapter
 
+import android.graphics.BitmapFactory
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +10,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.seekingbabysitter.R
 import com.example.seekingbabysitter.model.Person
+import com.google.firebase.storage.FirebaseStorage
+import java.io.File
 
 class DataAdapter(
     private val dataset: List<Person>
@@ -44,14 +48,25 @@ class DataAdapter(
         return ItemViewHolder(adapterLayout,mListener)
     }
 
-
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
-            //holder.imageView.setImageResource(item.user_image)
-            holder.nameTextView.text = ("Full Name: " + item.first_name + " " + item.last_name)
-            holder.ageTextView.text = ("Age: " + item.age.toString())
-            holder.cityTextView.text = ("City: " + item.city)
-            holder.userIdTextView.text = ("User Id: " + item.user_id)
+
+        // retrieve and insert profile image of user from Firebase Storage
+        val storageRef = FirebaseStorage.getInstance().reference.child("images/${item.user_image}")
+        val localFile = File.createTempFile("tempProfileImage","jpeg")
+        storageRef.getFile(localFile).addOnSuccessListener {
+            val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
+            holder.imageView.background = null
+            holder.imageView.setImageBitmap(bitmap)
+        }.addOnFailureListener{
+            Log.i("Details User: Retrieve Profile Image:", "Failed")
+        }
+
+        // insert other parameters
+        holder.nameTextView.text = ("Full Name: " + item.first_name + " " + item.last_name)
+        holder.ageTextView.text = ("Age: " + item.age.toString())
+        holder.cityTextView.text = ("City: " + item.city)
+        holder.userIdTextView.text = ("User Id: " + item.user_id)
     }
 
     override fun getItemCount(): Int {

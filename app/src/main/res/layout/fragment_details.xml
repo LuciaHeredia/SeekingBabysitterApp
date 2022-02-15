@@ -14,6 +14,7 @@
         android:layout_marginTop="50dp"
         android:layout_width="350dp"
         android:layout_height="350dp"
+        android:background="@drawable/ic_photo"
         android:contentDescription="@string/person_image" />
 
     <LinearLayout
@@ -31,7 +32,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/full_name"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         tools:ignore="TextContrastCheck" />
 
@@ -42,7 +43,7 @@
         android:layout_marginTop="10dp"
         android:hint="@string/age"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         tools:ignore="TextContrastCheck" />
 
@@ -53,7 +54,7 @@
             android:layout_marginTop="10dp"
             android:hint="@string/phone"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             tools:ignore="TextContrastCheck" />
 
@@ -64,7 +65,7 @@
             android:layout_marginTop="10dp"
             android:hint="@string/city"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             tools:ignore="TextContrastCheck" />
 
@@ -75,7 +76,7 @@
             android:layout_marginTop="10dp"
             android:hint="@string/email_ask"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             tools:ignore="TextContrastCheck" />
 
@@ -86,7 +87,7 @@
             android:layout_marginTop="10dp"
             android:hint="@string/user_id"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             tools:ignore="TextContrastCheck" />
 

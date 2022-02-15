@@ -1,35 +1,43 @@
 package com.example.seekingbabysitter.data
 
+import android.util.Log
 import com.example.seekingbabysitter.model.Person
+import com.google.firebase.database.*
 
 class DataSource {
-    private fun loadList(): List<Person> {
-        return listOf(
-            Person("tony","stark",55,"0547361936","kafas","sf@walla.com","2342fsdf32",
-                reviewed = false,
-                approved = false,
-                user_image = "R.drawable.tony_11",
-                id_image = "R.drawable.tony_11"
-            ),
-            Person("capt","amer",22,"0547361936","herz","dd@gmail.com","62fsdf32",
-                reviewed = true,
-                approved = true,
-                user_image = "R.drawable.captain_america_22",
-                id_image = "R.drawable.captain_america_22"
-            ),
-            Person("thor","rrr",66,"0547361936","tel aviv","gap@gmail.com","4342fsdf32",
-                reviewed = true,
-                approved = true,
-                user_image = "R.drawable.thor_33",
-                id_image = "R.drawable.thor_33"
-            )
-        )
+
+    private lateinit var database : DatabaseReference
+    private lateinit var userList : ArrayList<Person>
+
+    private fun loadList() {
+        userList = arrayListOf()
+
+        database = FirebaseDatabase.getInstance().reference
+        database.addValueEventListener(object : ValueEventListener{
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    for(userSnapshot in snapshot.children){
+                        val user = userSnapshot.getValue(Person::class.java)
+                        userList.add(user!!)
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.i("DataSource Firebase Realtime:", "Failed!")
+            }
+
+        })
+        Log.i("DataSource ", userList[0].user_id!!)
     }
 
-    fun loadFilteredList(): List<Person> {
+
+    fun loadReviewList(): List<Person> {
         val filteredList = ArrayList<Person>()
-        for (p in loadList()) {
-            if (p.approved == true && p.reviewed == true) {
+        loadList()
+        for (p in userList) {
+            if (p.approved == false && p.reviewed == false) {
                 filteredList.add(p)
             }
         }

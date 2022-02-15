@@ -135,7 +135,7 @@ class ApplyFragment : Fragment() {
 
     private fun signUp(view: ScrollView) {
 
-        // Loading Alert-Dialog
+        // Uploading Alert-Dialog
         val dialogBuilder = AlertDialog.Builder(activity!!)
         dialogBuilder.setMessage("Uploading...")
         val alert = dialogBuilder.create()
