@@ -1,5 +1,6 @@
 # SeekingBabysitterApp
 
+Seeking Babysitter App in Kotlin, Android Studio. <br />
 Final project in an app development course. <br />
 
 The app shows a list of babysitters who registered, were reviewed and approved by the manager, that way anyone whos looking for a babysitter can be sure that the babysitter is a real person. <br />
