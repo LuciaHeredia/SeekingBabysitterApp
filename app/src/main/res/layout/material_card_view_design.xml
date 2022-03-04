@@ -8,7 +8,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:clickable="true"
-    android:backgroundTint="@color/teal_700"
+    android:backgroundTint="@color/purple"
     app:cardElevation="6dp"
     tools:ignore="TouchTargetSizeCheck">
 
@@ -21,8 +21,9 @@
 
         <ImageView
             android:id="@+id/person_image"
-            android:layout_width="150sp"
-            android:layout_height="150sp"
+            android:layout_width="130sp"
+            android:layout_height="130sp"
+            android:layout_marginStart="2dp"
             android:background="@drawable/ic_photo"
             android:contentDescription="@string/person_image" />
 
@@ -33,13 +34,61 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/full_name"
+                android:id="@+id/full_name_static"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="2dp"
                 android:text="@string/full_name"
                 android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/age_static"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:text="@string/age"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/city_static"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:text="@string/city"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/user_id_static"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:text="@string/user_id"
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/full_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/teal_200"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -49,8 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="2dp"
-                android:text="@string/age"
-                android:textColor="@color/white"
+                android:textColor="@color/teal_200"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -60,8 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="2dp"
-                android:text="@string/city"
-                android:textColor="@color/white"
+                android:textColor="@color/teal_200"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -71,8 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="2dp"
-                android:text="@string/user_id"
-                android:textColor="@color/white"
+                android:textColor="@color/teal_200"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 

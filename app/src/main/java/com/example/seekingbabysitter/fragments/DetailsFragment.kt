@@ -65,12 +65,12 @@ class DetailsFragment : Fragment() {
         }
 
         // insert in fragment objects
-        binding.fullNameDetails.text = ("Full Name: " + person.first_name + " " + person.last_name)
-        binding.ageDetails.text = ("Age: " + person.age.toString())
-        binding.phoneDetails.text = ("Phone: " + person.phone)
-        binding.cityDetails.text = ("City: " + person.city)
-        binding.emailDetails.text = ("Email: " + person.email)
-        binding.userIdDetails.text = ("User Id: " + person.user_id)
+        binding.fullNameDetails.text = (person.first_name + " " + person.last_name)
+        binding.ageDetails.text = (person.age.toString())
+        binding.phoneDetails.text = (person.phone)
+        binding.cityDetails.text = (person.city)
+        binding.emailDetails.text = (person.email)
+        binding.userIdDetails.text = (person.user_id)
 
         return view
     }

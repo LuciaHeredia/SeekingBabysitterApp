@@ -63,10 +63,10 @@ class DataAdapter(
         }
 
         // insert other parameters
-        holder.nameTextView.text = ("Full Name: " + item.first_name + " " + item.last_name)
-        holder.ageTextView.text = ("Age: " + item.age.toString())
-        holder.cityTextView.text = ("City: " + item.city)
-        holder.userIdTextView.text = ("User Id: " + item.user_id)
+        holder.nameTextView.text = (item.first_name + " " + item.last_name)
+        holder.ageTextView.text = (item.age.toString())
+        holder.cityTextView.text = (item.city)
+        holder.userIdTextView.text = (item.user_id)
     }
 
     override fun getItemCount(): Int {
