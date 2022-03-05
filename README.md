@@ -16,7 +16,7 @@ In the Home Fragment - 3 buttons:<br />
 * SEARCH for a babysitter(A search by gender and city).<br />
 * LOGIN after veryfing email.<br />
 
-<img src = "AppPictures/entry page.png">
+<img src = "ReadmeImages/HOME-gif.gif">
 
 ## App created with:
 * Android version: 12
