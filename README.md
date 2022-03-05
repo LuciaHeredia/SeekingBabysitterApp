@@ -23,7 +23,8 @@ If the MANAGER logged in - 2 buttons:<br />
 * SEARCH for a babysitter(A search by gender and city) - same as the above.<br />
 * MANAGER - loads a list of users to be reviewed.<br />
 
-<img src = "ReadmeImages/applay_screen.png" height="580">
+<img src = "ReadmeImages/home_manager_screen.png" height="580">
+<img src = "ReadmeImages/manager_screen.png" height="580">
 
 If a USER logged in - 2 buttons:<br />
 * SEARCH for a babysitter(A search by gender and city) - same as the above.<br />
