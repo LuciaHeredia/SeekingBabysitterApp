@@ -30,6 +30,7 @@ class DataAdapter(
     class ItemViewHolder(view: View, listener: OnItemClickListener): RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.findViewById(R.id.person_image)
         val nameTextView: TextView = view.findViewById(R.id.full_name)
+        val genderTextView: TextView = view.findViewById(R.id.gender)
         val ageTextView: TextView = view.findViewById(R.id.age)
         val cityTextView: TextView = view.findViewById(R.id.city)
         val userIdTextView: TextView = view.findViewById(R.id.user_id)
@@ -64,6 +65,7 @@ class DataAdapter(
 
         // insert other parameters
         holder.nameTextView.text = (item.first_name + " " + item.last_name)
+        holder.genderTextView.text = (item.gender)
         holder.ageTextView.text = (item.age.toString())
         holder.cityTextView.text = (item.city)
         holder.userIdTextView.text = (item.user_id)

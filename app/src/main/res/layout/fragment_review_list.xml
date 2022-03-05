@@ -17,7 +17,7 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/users_to_approve"
         android:textColor="@color/purple"
-        android:textSize="48sp"
+        android:textSize="55sp"
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -26,6 +26,6 @@
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"
-        tools:listitem="@layout/material_card_view_design_review" />
+        tools:listitem="@layout/material_card_view_design" />
 
 </LinearLayout>

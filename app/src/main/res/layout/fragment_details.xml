@@ -36,15 +36,21 @@
         android:orientation="vertical">
 
     <TextView
-        android:id="@+id/full_name_details_static"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/full_name"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/gender"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
     <TextView
-        android:id="@+id/age_details_static"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -53,7 +59,6 @@
         android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/phone_details_static"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -62,7 +67,6 @@
             android:textSize="18sp"/>
 
         <TextView
-            android:id="@+id/city_details_static"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -71,7 +75,6 @@
             android:textSize="18sp"/>
 
         <TextView
-            android:id="@+id/email_details_static"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -80,7 +83,6 @@
             android:textSize="18sp"/>
 
         <TextView
-            android:id="@+id/user_id_details_static"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -101,6 +103,16 @@
             android:id="@+id/full_name_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/teal_200"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/gender_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:textColor="@color/teal_200"
             android:textSize="18sp"
             android:textStyle="bold"

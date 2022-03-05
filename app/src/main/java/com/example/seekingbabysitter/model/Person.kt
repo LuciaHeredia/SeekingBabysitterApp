@@ -3,6 +3,7 @@ package com.example.seekingbabysitter.model
 data class Person(
     val first_name: String? = null,
     val last_name: String? = null,
+    val gender: String? = null,
     val age: Long? = 0,
     val phone: String? = null,
     val city: String? = null,

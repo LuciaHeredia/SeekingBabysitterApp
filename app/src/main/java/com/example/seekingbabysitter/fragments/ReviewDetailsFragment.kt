@@ -123,6 +123,7 @@ class ReviewDetailsFragment : Fragment() {
     private fun loadUserDataFromDataBase(view: ScrollView, person: Person) {
         binding.editTextPersonNameReviewDetails.text = person.first_name
         binding.editTextPersonLastNameReviewDetails.text = person.last_name
+        binding.editTextGenderReviewDetails.text = person.gender
         binding.editTextAgeReviewDetails.text = person.age.toString()
         binding.editTextPhoneReviewDetails.text = person.phone
         binding.editTextCityReviewDetails.text = person.city

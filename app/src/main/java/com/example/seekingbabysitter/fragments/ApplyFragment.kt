@@ -25,7 +25,6 @@ import com.google.firebase.storage.FirebaseStorage
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 class ApplyFragment : Fragment() {
     private var _binding: FragmentApplyBinding? = null
     private val binding get() = _binding!!
@@ -133,6 +132,15 @@ class ApplyFragment : Fragment() {
         }
     }
 
+    private fun getGenderSelected(): String {
+        // get selected radio button from radioGroup
+        val selectedId: Int = binding.radioGroupChooseGender.checkedRadioButtonId
+        return if (selectedId == binding.rdbChooseFemale.id)
+            binding.rdbChooseFemale.text.toString()
+        else
+            binding.rdbChooseMale.text.toString()
+    }
+
     private fun signUp(view: ScrollView) {
 
         // Uploading Alert-Dialog
@@ -162,6 +170,7 @@ class ApplyFragment : Fragment() {
                 val person = Person(
                     binding.editTextPersonName.text.toString().trim { it <= ' ' },
                     binding.editTextPersonLastName.text.toString().trim { it <= ' ' },
+                    getGenderSelected(),
                     binding.editTextAge.text.toString().toLong(),
                     binding.editTextPhone.text.toString().trim { it <= ' ' },
                     binding.editTextCity.text.toString().trim { it <= ' ' },

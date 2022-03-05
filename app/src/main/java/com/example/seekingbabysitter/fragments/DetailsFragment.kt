@@ -66,6 +66,7 @@ class DetailsFragment : Fragment() {
 
         // insert in fragment objects
         binding.fullNameDetails.text = (person.first_name + " " + person.last_name)
+        binding.genderDetails.text = (person.gender)
         binding.ageDetails.text = (person.age.toString())
         binding.phoneDetails.text = (person.phone)
         binding.cityDetails.text = (person.city)
@@ -75,5 +76,4 @@ class DetailsFragment : Fragment() {
         return view
     }
 
-    
 }

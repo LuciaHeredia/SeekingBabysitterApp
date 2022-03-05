@@ -54,5 +54,11 @@
     <string name="not_approved">NOT APPROVED</string>
     <string name="approved">APPROVED</string>
     <string name="in_general">In General:</string>
+    <string name="search_by_city">Search by City..</string>
+    <string name="both">Both</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="search_by_gender">Search by Gender:</string>
+    <string name="gender">Gender:</string>
 
 </resources>

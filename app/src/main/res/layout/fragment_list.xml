@@ -12,7 +12,7 @@
         android:id="@+id/app_name_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal"
         android:text="@string/confirmed_babysitters"
@@ -20,11 +20,75 @@
         android:textSize="50sp"
         android:textStyle="bold" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:text="@string/search_by_gender"
+            android:textColor="@color/purple"
+            android:gravity="center_vertical"
+            android:layout_gravity="start|center_vertical"
+            android:textSize="18sp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup_by_gender"
+        android:checkedButton="@+id/rdb_both"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rdb_both"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="@string/both"/>
+        <RadioButton
+            android:id="@+id/rdb_female"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="@string/female"/>
+
+        <RadioButton
+            android:id="@+id/rdb_male"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/male"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+    </RadioGroup>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/search_by_city"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:hint="@string/search_by_city"
+        android:importantForAutofill="no"
+        android:textSize="18sp"
+        android:inputType="text"
+        tools:ignore="TextContrastCheck" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         tools:listitem="@layout/material_card_view_design" />
 

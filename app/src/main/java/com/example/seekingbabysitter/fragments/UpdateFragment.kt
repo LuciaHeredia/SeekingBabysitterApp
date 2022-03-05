@@ -89,9 +89,26 @@ class UpdateFragment : Fragment() {
         return view
     }
 
+    private fun getGenderSelected(): String {
+        // get selected radio button from radioGroup
+        val selectedId: Int = binding.radioGroupGenderUpdate.checkedRadioButtonId
+        return if (selectedId == binding.rdbFemaleUpdate.id)
+            binding.rdbFemaleUpdate.text.toString()
+        else
+            binding.rdbMaleUpdate.text.toString()
+    }
+
+    private fun setIdOfGenderSelected(genderOfPerson: String): Int {
+        return if(genderOfPerson == "Female")
+            binding.rdbFemaleUpdate.id
+        else
+            binding.rdbMaleUpdate.id
+    }
+
     private fun loadUserDataFromDataBase(view: View, person: Person) {
         binding.editTextPersonNameUpdate.setText(person.first_name)
         binding.editTextPersonLastNameUpdate.setText(person.last_name)
+        binding.radioGroupGenderUpdate.check(setIdOfGenderSelected(person.gender!!))// load gender
         binding.editTextAgeUpdate.setText(person.age.toString())
         binding.editTextPhoneUpdate.setText(person.phone)
         binding.editTextCityUpdate.setText(person.city)
@@ -257,6 +274,7 @@ class UpdateFragment : Fragment() {
                 val newPerson = Person(
                     binding.editTextPersonNameUpdate.text.toString().trim { it <= ' ' },
                     binding.editTextPersonLastNameUpdate.text.toString().trim { it <= ' ' },
+                    getGenderSelected(),
                     binding.editTextAgeUpdate.text.toString().toLong(),
                     binding.editTextPhoneUpdate.text.toString().trim { it <= ' ' },
                     binding.editTextCityUpdate.text.toString().trim { it <= ' ' },
@@ -339,6 +357,7 @@ class UpdateFragment : Fragment() {
                 val newPerson = Person(
                     binding.editTextPersonNameUpdate.text.toString().trim { it <= ' ' },
                     binding.editTextPersonLastNameUpdate.text.toString().trim { it <= ' ' },
+                    getGenderSelected(),
                     binding.editTextAgeUpdate.text.toString().toLong(),
                     binding.editTextPhoneUpdate.text.toString().trim { it <= ' ' },
                     binding.editTextCityUpdate.text.toString().trim { it <= ' ' },
@@ -414,6 +433,7 @@ class UpdateFragment : Fragment() {
             val newPerson = Person(
                 binding.editTextPersonNameUpdate.text.toString().trim { it <= ' ' },
                 binding.editTextPersonLastNameUpdate.text.toString().trim { it <= ' ' },
+                getGenderSelected(),
                 binding.editTextAgeUpdate.text.toString().toLong(),
                 binding.editTextPhoneUpdate.text.toString().trim { it <= ' ' },
                 binding.editTextCityUpdate.text.toString().trim { it <= ' ' },

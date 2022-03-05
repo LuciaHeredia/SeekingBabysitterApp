@@ -66,6 +66,7 @@ class LogInFragment  : Fragment() {
                             val person = Person(
                                 it.child("first_name").value.toString(),
                                 it.child("last_name").value.toString(),
+                                "fff", //TEST
                                 it.child("age").value as Long?,
                                 it.child("phone").value.toString(),
                                 it.child("city").value.toString(),
