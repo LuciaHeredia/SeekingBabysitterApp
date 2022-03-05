@@ -17,6 +17,19 @@ In the Home Fragment - 3 buttons:<br />
 * LOGIN after veryfing email.<br />
 
 <img src = "ReadmeImages/HOME-gif.gif" height="580">
+<img src = "ReadmeImages/applay_screen.png" height="580"> <img src = "ReadmeImages/list_screen.png" height="580"> <img src = "ReadmeImages/login_screen.png" height="580">
+
+If the MANAGER logged in - 2 buttons:<br />
+* SEARCH for a babysitter(A search by gender and city) - same as the above.<br />
+* MANAGER - loads a list of users to be reviewed.<br />
+
+<img src = "ReadmeImages/applay_screen.png" height="580">
+
+If a USER logged in - 2 buttons:<br />
+* SEARCH for a babysitter(A search by gender and city) - same as the above.<br />
+* UPDATE - loads the information of the user, remarks from the manager are visible and can update the information.<br />
+
+<img src = "ReadmeImages/applay_screen.png" height="580">
 
 ## App created with:
 * Android version: 12
