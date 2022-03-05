@@ -30,7 +30,8 @@ If a USER logged in - 2 buttons:<br />
 * SEARCH for a babysitter(A search by gender and city) - same as the above.<br />
 * UPDATE - loads the information of the user, remarks from the manager are visible and can update the information.<br />
 
-<img src = "ReadmeImages/applay_screen.png" height="580">
+<img src = "ReadmeImages/home_user_screen.png" height="580">
+<img src = "ReadmeImages/update_screen.png" height="580">
 
 ## App created with:
 * Android version: 12
