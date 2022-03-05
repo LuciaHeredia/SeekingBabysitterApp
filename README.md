@@ -8,6 +8,7 @@ The app shows a list of babysitters who registered, were reviewed and approved b
 ## App description:
 The app contains a MainActivity and Fragments and uses a Navigation Graph to navigate between destinations.<br />
 The RecyclerViews contains several MaterialDesignCardView for each User added with the help of an Adapter.<br />
+A search by gender and city is optional in the fragment list of babysitters.<br />
 To transfer the selected User from the RecyclerView between the fragments or after the LOGIN, I used the Safe Args wich transferd a JsonString of the User from one Fragment to another.<br />
 The app uses Firebase Authentication for the registration, Firebase Realtime Database for storing the data of every user and Firebase Storage for the images uploaded.<br />
 
