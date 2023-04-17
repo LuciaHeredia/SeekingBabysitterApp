@@ -1,6 +1,5 @@
 # SeekingBabysitterApp
 
-Seeking Babysitter App in Kotlin, Android Studio. <br />
 Final project in an app development course. <br />
 
 The app shows a list of babysitters who registered, were reviewed and approved by the manager, that way anyone whos looking for a babysitter can be sure that the babysitter is a real person. <br />
@@ -33,6 +32,7 @@ If a USER logged in - 2 buttons:<br />
 <img src = "ReadmeImages/home_user_screen.png" height="580">
 <img src = "ReadmeImages/update_screen.png" height="580">
 
-## App created with:
+## Created with:
+* Android studio: Kotlin.
 * Android version: 12
 * SDK version: 31
