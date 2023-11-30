@@ -19,7 +19,7 @@ The app uses Firebase Authentication for the registration, Firebase Realtime Dat
 
 * #### APPLY - as a Babysitter.<br />
 
-<img src = "ReadmeImages/applay_screen.png" height="580"> <br />
+<img src = "ReadmeImages/applay_screen.png" height="500"> <br />
 
 
 * #### SEARCH - for a babysitter(A search by gender and city). <br />
